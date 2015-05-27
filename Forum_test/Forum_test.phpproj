@@ -25,8 +25,13 @@
   <ItemGroup>
     <Compile Include="config.php" />
     <Compile Include="forum\controller\account\login.php" />
+    <Compile Include="forum\controller\account\register.php" />
+    <Compile Include="forum\controller\common\footer.php" />
+    <Compile Include="forum\controller\common\header.php" />
     <Compile Include="forum\controller\common\home.php" />
     <Compile Include="index.php" />
+    <Compile Include="system\library\request.php" />
+    <Compile Include="system\library\response.php" />
     <Compile Include="system\loader.php" />
     <Compile Include="system\registry.php" />
     <Compile Include="system\request.php" />
@@ -45,6 +50,10 @@
     <Folder Include="system\library\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="forum\view\home.tpl" />
+    <Content Include="forum\view\footer.html" />
+    <Content Include="forum\view\header.html" />
+    <Content Include="forum\view\home.html" />
+    <Content Include="forum\view\login.html" />
+    <Content Include="forum\view\register.html" />
   </ItemGroup>
 </Project>

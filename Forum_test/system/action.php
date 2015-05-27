@@ -70,6 +70,7 @@ class Action
 				return false;
 			}
 		} else {
+            echo $this->file . 'does not exist!';
 			return false;
 		}
         

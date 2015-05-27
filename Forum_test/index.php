@@ -18,7 +18,9 @@ $registry->set('url', $url);
 $loader = new Loader($registry);
 $registry->set('load', $loader);
 
-
+$response = new Response();
+$response->addHeader('Content-Type: text/html; charset=utf-8');
+$registry->set('response', $response);
 
 if (isset($request->get['route'])) {
 	$action = new Action($request->get['route']);

@@ -1,16 +1,16 @@
 <?php
 
 /**
- * login short summary.
+ * register short summary.
  *
- * login description.
+ * register description.
  *
  * @version 1.0
  * @author C
  */
-class AccountLoginController extends Controller
+class AccountregisterController extends Controller
 {
-    public function index()
+    public function index() 
     {
         $data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
@@ -22,7 +22,6 @@ class AccountLoginController extends Controller
             exit();
         }
         else
-            $this->response->render($this->load->view('login.html', $data));        
-        
+            $this->response->render($this->load->view('register.html', $data));
     }
 }

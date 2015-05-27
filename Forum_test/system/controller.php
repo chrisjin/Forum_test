@@ -11,7 +11,6 @@
 class Controller
 {
     private $registry;
-
 	public function __construct($registry) 
     {
 		$this->registry = $registry;
