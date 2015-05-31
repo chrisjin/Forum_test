@@ -1,7 +1,47 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
 <head>
 
 </head>
-<body>
+<body style="margin:0">
+    <span id="header">
+        <img src='forum/view/img/logo.png' style="width: 120px; height: 80px;" />
+    </span>
+    <div id="topbar">
+        <a href='<?php echo $link_login ?>'>
+            <span class="glyphicon glyphicon-log-in"></span>
+            login
+        </a>
+        <a href='<?php echo $link_register ?>'>
+            <span class="glyphicon glyphicon-user"></span>
+            register
+        </a>
+    </div>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Information</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#" data-toggle="tap">Forum</a></li>
+                <li><a href="#" data-toggle="tap">SVN</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Java
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">jmeter</a></li>
+                        <li><a href="#">EJB</a></li>
+                        <li><a href="#">Jasper Report</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">分离的链接</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">另一个分离的链接</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
 

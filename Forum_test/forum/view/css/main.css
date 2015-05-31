@@ -1,0 +1,49 @@
+﻿
+#header {
+    line-height: 0;
+    padding: 0;
+    margin-top: 0;
+    display: inline;
+}
+
+#topbar {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+
+    #topbar a {
+          font-size: 20px
+    }
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }

@@ -22,6 +22,10 @@ $response = new Response();
 $response->addHeader('Content-Type: text/html; charset=utf-8');
 $registry->set('response', $response);
 
+$db = new DB(DB_DRIVER, DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+$registry->set('db', $db);
+
+
 if (isset($request->get['route'])) {
 	$action = new Action($request->get['route']);
 } else {

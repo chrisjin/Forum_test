@@ -14,12 +14,13 @@ final class Loader {
 
 	public function model($model) {
 		$file = DIR_APPLICATION . 'model/' . $model . '.php';
-		$class = 'Model' . preg_replace('/[^a-zA-Z0-9]/', '', $model);
+		$class = preg_replace('/[^a-zA-Z0-9]/', '', $model) . 'Model';
 
 		if (file_exists($file)) {
 			include_once($file);
-
-			$this->registry->set('model_' . str_replace('/', '_', $model), new $class($this->registry));
+            $modelobj = new $class($this->registry);
+			$this->registry->set(str_replace('/', '_', $model) . '_model', $modelobj);
+            return $modelobj;
 		} else {
 			trigger_error('Error: Could not load model ' . $file . '!');
 			exit();

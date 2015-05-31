@@ -29,10 +29,18 @@
     <Compile Include="forum\controller\common\footer.php" />
     <Compile Include="forum\controller\common\header.php" />
     <Compile Include="forum\controller\common\home.php" />
+    <Compile Include="forum\model\Account\user.php" />
     <Compile Include="index.php" />
+    <Compile Include="system\library\db.php" />
+    <Compile Include="system\library\db\mpdo.php" />
+    <Compile Include="system\library\db\mssql.php" />
+    <Compile Include="system\library\db\mysql.php" />
+    <Compile Include="system\library\db\mysqli.php" />
+    <Compile Include="system\library\db\postgre.php" />
     <Compile Include="system\library\request.php" />
     <Compile Include="system\library\response.php" />
     <Compile Include="system\loader.php" />
+    <Compile Include="system\model.php" />
     <Compile Include="system\registry.php" />
     <Compile Include="system\request.php" />
     <Compile Include="system\startup.php" />
@@ -45,14 +53,23 @@
     <Folder Include="forum\controller\" />
     <Folder Include="forum\controller\account\" />
     <Folder Include="forum\controller\common\" />
+    <Folder Include="forum\model\" />
+    <Folder Include="forum\model\Account\" />
     <Folder Include="forum\view\" />
+    <Folder Include="forum\view\css\" />
+    <Folder Include="forum\view\img\" />
     <Folder Include="system\" />
     <Folder Include="system\library\" />
+    <Folder Include="system\library\db\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="forum\view\css\main.css" />
     <Content Include="forum\view\footer.html" />
     <Content Include="forum\view\header.html" />
     <Content Include="forum\view\home.html" />
+    <Content Include="forum\view\img\logo.png" />
+    <Content Include="forum\view\img\logo_test.png" />
+    <Content Include="forum\view\img\ttt.html" />
     <Content Include="forum\view\login.html" />
     <Content Include="forum\view\register.html" />
   </ItemGroup>

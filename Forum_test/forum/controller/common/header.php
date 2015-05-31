@@ -12,7 +12,10 @@ class CommonHeaderController extends Controller
 {
      public function index()
      {
-         $data = array();
-         return $this->load->view('header.html', $data);
+         $this->data['link_login'] = $this->url->link('account/login');
+
+         $this->data['link_register'] = $this->url->link('account/register');
+         
+         return $this->load->view('header.html', $this->data);
      }
 }

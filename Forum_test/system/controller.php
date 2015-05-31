@@ -11,8 +11,10 @@
 class Controller
 {
     private $registry;
+    protected $data;
 	public function __construct($registry) 
     {
+        $this->data['_img_'] = DIR_IMAGE;
 		$this->registry = $registry;
 	} 
     
