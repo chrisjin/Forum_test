@@ -9,6 +9,9 @@ require_once(DIR_SYSTEM . 'startup.php');
 
 $registry = new Registry();
 
+$session = new Session();
+$registry->set('session', $session);
+
 $request = new Request();
 $registry->set('request', $request);
 
@@ -25,6 +28,8 @@ $registry->set('response', $response);
 $db = new DB(DB_DRIVER, DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 $registry->set('db', $db);
 
+$user = new User($registry);
+$registry->set('user', $user);
 
 if (isset($request->get['route'])) {
 	$action = new Action($request->get['route']);

@@ -10,9 +10,28 @@
  */
 class AccountUserModel extends Model
 {
-    public function adduser($data)
+
+    public function AddUser($data)
     {
-        $this->db->query('INSERT INTO user (email, username, password) VALUES' 
-        . '(\''. $data['email'] . '\', \'' . $data['username'] .'\', \'' . $data['password'] . '\')');
+        $this->Insert('user', $data, array('email', 'username', 'password'));
+    }
+    public function GetUserByEmail($email)
+    {
+        $user_info = $this->db->query("SELECT * FROM user WHERE LOWER(email) = '$email'");
+        return $user_info;
+    }
+    public function SetSalt($email, $salt)
+    {
+        $this->db->query("UPDATE user SET salt = '$salt' WHERE LOWER(email) = '$email'");
+    }
+    public function GetSalt($email)
+    {
+        $query_info = $this->GetUserByEmail($email);
+        if(isset($query_info['salt']))
+        {
+            return $query_info['salt'];
+        }
+        else
+            return false;
     }
 }

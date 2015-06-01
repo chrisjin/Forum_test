@@ -25,12 +25,15 @@
   <ItemGroup>
     <Compile Include="config.php" />
     <Compile Include="forum\controller\account\login.php" />
+    <Compile Include="forum\controller\account\logout.php" />
     <Compile Include="forum\controller\account\register.php" />
     <Compile Include="forum\controller\common\footer.php" />
     <Compile Include="forum\controller\common\header.php" />
     <Compile Include="forum\controller\common\home.php" />
     <Compile Include="forum\model\Account\user.php" />
     <Compile Include="index.php" />
+    <Compile Include="system\library\session.php" />
+    <Compile Include="system\library\user.php" />
     <Compile Include="system\library\db.php" />
     <Compile Include="system\library\db\mpdo.php" />
     <Compile Include="system\library\db\mssql.php" />

@@ -14,7 +14,7 @@ abstract class Model {
 		$this->registry->set($key, $value);
 	}
     
-    public function Insert($data, $filter)
+    public function Insert($table, $data, $filter)
     {
         $trimmed_data = array_intersect_key($data, 
                     array_flip($filter));
@@ -22,7 +22,11 @@ abstract class Model {
         $namepart = join(',', array_keys($trimmed_data));
         $valuepart ='\'' . join('\',\'', array_values($trimmed_data)) . '\'';
         
-        echo 'INSERT INTO table ' . '(' . $namepart . ') VALUES (' .  $valuepart . ')';
-        
+        $querystring = "INSERT INTO $table ($namepart) VALUES ($valuepart)";
+        $this->db->query($querystring);
     }
+    
+    //public function Update($table, $data, $con_value)
+    //{
+    //}
 }

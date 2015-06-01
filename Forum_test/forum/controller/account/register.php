@@ -23,9 +23,11 @@ class AccountregisterController extends Controller
             echo $this->request->post['password_again']. '<br>';
             $this->load->model('account/user');
             
+            if($this->request->post['password'] 
+                == $this->request->post['password_again'])
+            $this->account_user_model->AddUser( $this->request->post);
             
-            //$this->account_user_model->AddUser( $this->request->post);
-            $this->account_user_model->Insert( $this->request->post, array('username', 'email', 'password'));
+            //$this->account_user_model->Insert('user', $this->request->post, array('username', 'email', 'password'));
             exit();
         }
         else
