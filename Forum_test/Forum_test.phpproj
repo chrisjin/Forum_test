@@ -27,9 +27,11 @@
     <Compile Include="forum\controller\account\login.php" />
     <Compile Include="forum\controller\account\logout.php" />
     <Compile Include="forum\controller\account\register.php" />
+    <Compile Include="forum\controller\common\about.php" />
     <Compile Include="forum\controller\common\footer.php" />
     <Compile Include="forum\controller\common\header.php" />
     <Compile Include="forum\controller\common\home.php" />
+    <Compile Include="forum\controller\forum\section.php" />
     <Compile Include="forum\model\Account\user.php" />
     <Compile Include="index.php" />
     <Compile Include="system\library\session.php" />
@@ -56,6 +58,7 @@
     <Folder Include="forum\controller\" />
     <Folder Include="forum\controller\account\" />
     <Folder Include="forum\controller\common\" />
+    <Folder Include="forum\controller\forum\" />
     <Folder Include="forum\model\" />
     <Folder Include="forum\model\Account\" />
     <Folder Include="forum\view\" />
@@ -66,6 +69,7 @@
     <Folder Include="system\library\db\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="forum\view\about.html" />
     <Content Include="forum\view\css\main.css" />
     <Content Include="forum\view\footer.html" />
     <Content Include="forum\view\header.html" />
@@ -75,5 +79,6 @@
     <Content Include="forum\view\img\ttt.html" />
     <Content Include="forum\view\login.html" />
     <Content Include="forum\view\register.html" />
+    <Content Include="forum\view\section.html" />
   </ItemGroup>
 </Project>

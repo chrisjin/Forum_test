@@ -1,20 +1,18 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/transitional.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/transitional.dtd">
 <html>
 <head>
 
 </head>
 <body style="margin:0">
-
-
-    <nav class="navbar navbar-default navbar-fixed-top" id="topbar" role="navigation">
+    <div id="headerlogo">
+        <img src="forum\view\img\logo.jpg" />
+    </div>
+    <nav class="navbar navbar-default" id="topbar" role="navigation">
 
         <div class="navbar-inner container">
 
             <ul class="nav navbar-nav  navbar-left">
-                <li><a href="./index.php">Home</a></li>
-                <li><a href="./index.php">Forum</a></li>
-                <li><a href="./index.php">A</a></li>
-                <li><a href="./index.php">B</a></li>
+                <?= $headeritem ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(!$islogged) {?>

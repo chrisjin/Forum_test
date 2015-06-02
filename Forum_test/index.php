@@ -1,5 +1,4 @@
 <?php
-
 if (is_file('config.php')) {
 	require_once('config.php');
 }
@@ -40,4 +39,6 @@ $action->execute($registry);
 
 //echo $url->link('account/login/show');
 ?>
+
+
 

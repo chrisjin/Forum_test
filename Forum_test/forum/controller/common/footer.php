@@ -12,7 +12,7 @@ class CommonFooterController extends Controller
 {
      public function index()
      {
-         $data = array();
-         return $this->load->view('footer.html', $data);
+        $data = array();
+        return $this->load->view('footer.html', $data);
      }
 }
