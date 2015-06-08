@@ -14,3 +14,5 @@ define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_DATABASE', 'forum_test');
 define('DB_PREFIX', 'oc_');
+
+define('CONTROLLER_HOME', 'common/home');

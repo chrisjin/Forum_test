@@ -29,11 +29,10 @@ class Action
 				continue;
 			} 
             $file = DIR_APPLICATION . 'controller/' . str_replace(array('../', '..\\', '..'), '', $path) . '.php';
-			
+            array_shift($parts);
             if (is_file($file)) {
 				$this->file = $file;
 				$this->class = preg_replace('/[^a-zA-Z0-9]/', '', $path) . 'Controller' ;
-				array_shift($parts);
 				break;
 			}
         }

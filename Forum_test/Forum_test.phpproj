@@ -33,8 +33,11 @@
     <Compile Include="forum\controller\common\home.php" />
     <Compile Include="forum\controller\forum\section.php" />
     <Compile Include="forum\model\Account\user.php" />
+    <Compile Include="forum\model\forum\section.php" />
     <Compile Include="index.php" />
+    <Compile Include="system\library\partstoob\nav.php" />
     <Compile Include="system\library\session.php" />
+    <Compile Include="system\library\strutil.php" />
     <Compile Include="system\library\user.php" />
     <Compile Include="system\library\db.php" />
     <Compile Include="system\library\db\mpdo.php" />
@@ -47,7 +50,6 @@
     <Compile Include="system\loader.php" />
     <Compile Include="system\model.php" />
     <Compile Include="system\registry.php" />
-    <Compile Include="system\request.php" />
     <Compile Include="system\startup.php" />
     <Compile Include="system\action.php" />
     <Compile Include="system\controller.php" />
@@ -61,12 +63,15 @@
     <Folder Include="forum\controller\forum\" />
     <Folder Include="forum\model\" />
     <Folder Include="forum\model\Account\" />
+    <Folder Include="forum\model\forum\" />
     <Folder Include="forum\view\" />
     <Folder Include="forum\view\css\" />
     <Folder Include="forum\view\img\" />
+    <Folder Include="forum\view\xml\" />
     <Folder Include="system\" />
     <Folder Include="system\library\" />
     <Folder Include="system\library\db\" />
+    <Folder Include="system\library\partstoob\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="forum\view\about.html" />

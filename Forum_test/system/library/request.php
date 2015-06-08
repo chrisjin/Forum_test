@@ -14,7 +14,9 @@ class Request {
 		$this->files = $this->clean($_FILES);
 		$this->server = $this->clean($_SERVER);
 	}
+    
 
+    
 	public function clean($data) {
 		if (is_array($data)) {
 			foreach ($data as $key => $value) {
@@ -28,4 +30,19 @@ class Request {
 
 		return $data;
 	}
+    public function controller_path()
+    {
+        if(isset($this->get['route']))
+            return $this->get['route'];
+        else
+            return CONTROLLER_HOME;
+    }
+    public function controller_arr()
+    {
+        return  explode('/', $this->controller_path());
+    }
+    public function full_path()
+    {
+        return $_SERVER['REQUEST_URI'];
+    }
 }

@@ -1,3 +1,39 @@
-﻿<?php echo $header?>
-KKKKK
+<?php echo $header?>
+
+<div class="container">
+    <ol class="breadcrumb">
+        <?php foreach($breadcrumbs_link as $link) {?>
+        <li><a href="<?=$link[1]?>"><?=$link[0]?></a></li>
+        <?php }?>
+    </ol>
+    <div class="panel-group" id="accordion">
+        <?php foreach($sections as $section) { ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#collapse1"><?=$section['name']?></a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <ul class="list-group">
+
+                        <?php foreach($subsections[$section['section_id']] as $subsection) {?>
+
+                        <li class="list-group-item">
+                            <a href="<?=$subsection['url']?>"> <?=$subsection['name']?></a>
+                            <br>
+
+                        </li>
+
+                        <?php }?>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+    </div>
+</div>
+
 <?php echo $footer ?>

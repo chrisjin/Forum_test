@@ -10,20 +10,6 @@
  */
 class CommonHeaderController extends Controller
 {
-    private function HeaderItem($nametourl)
-    {
-        $content = "";
-        foreach($nametourl as $name => $url)
-        {
-
-            if($_SERVER['REQUEST_URI'] == $url)
-                $oneline = "<li class='active'><a href='$url'>$name</a></li>";
-            else
-                $oneline = "<li><a href='$url'>$name</a></li>";
-            $content = $content . $oneline;
-        }
-        return $content;
-    }
     public function index($selectedtab)
     {
         $this->data['link_login'] = $this->url->link('account/login');
@@ -36,10 +22,10 @@ class CommonHeaderController extends Controller
         
 
         $this->data['headeritem'] = 
-            $this->HeaderItem([
-            'Home' => '/index.php',
-            'Forum' => $this->url->link('forum/section'),
-            'About Us' => $this->url->link('common/about')
+            PartStoob\Nav::items([
+            'Home' => ['/index.php', 'home'],
+            'Forum' => [$this->url->link('forum/section'), 'forum'],
+            'About Us' => [$this->url->link('common/about'), 'about']
             ]);
         return $this->load->view('header.html', $this->data);
     }

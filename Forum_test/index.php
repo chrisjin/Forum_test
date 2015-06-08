@@ -12,6 +12,7 @@ $session = new Session();
 $registry->set('session', $session);
 
 $request = new Request();
+//echo $request->route_path();
 $registry->set('request', $request);
 
 $url = new Url(HTTP_SERVER);
@@ -33,11 +34,18 @@ $registry->set('user', $user);
 if (isset($request->get['route'])) {
 	$action = new Action($request->get['route']);
 } else {
-	$action = new Action('common/home');
+	$action = new Action(CONTROLLER_HOME);
 }
+
+//echo StrUtil::form_link('common/home',['path'=>'aaa/bbb']);
+
+//$test_arr=[];
+//$test_arr[]=3;
+//$test_arr[]=4;
+//echo $test_arr[1];
 $action->execute($registry);
 
-//echo $url->link('account/login/show');
+
 ?>
 
 
