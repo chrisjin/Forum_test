@@ -1,14 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/transitional.dtd">
 <html>
 <head>
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="forum/view/css/main.css" rel="stylesheet">
-    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>-->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="forum/view/css/main.css" rel="stylesheet">
+    
 </head>
 <body style="margin:0">
     <div id="headerlogo">
-        <img src="forum\view\img\logo.jpg" />
+        <div id="headertext">Syracuse!</div>
     </div>
     <nav class="navbar navbar-default" id="topbar" role="navigation">
 
@@ -33,12 +41,12 @@
                 </li>
                 <?php } else {?>
                 <li class="dropdown">
-                    <a href='#' class="dropdown-toggle" data-toggle="dropdown">
+                    <a href='#' class="dropdown-toggle" data-toggle="dropdown" role="button">
                         <span class="glyphicon glyphicon-user"></span>
                         <?= $username ?> (<?= $email ?>)
                         <b class="caret"></b>
                     </a>
-                    <ul class="dropdown-menu right">
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
                         <li><a href="#">Settings</a></li>
                         <li class="divider"></li>
                         <li><a href="<?=$link_logout?>">Logout</a></li>
