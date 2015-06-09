@@ -1,0 +1,12 @@
+﻿<?php echo $header?>
+
+<div class="container">
+    <ol class="breadcrumb">
+        <?php foreach($breadcrumbs_link as $link) {?>
+        <li><a href="<?=$link[1]?>"><?=$link[0]?></a></li>
+        <?php }?>
+    </ol>
+    <?php echo $body;?>
+</div>
+
+<?php echo $footer ?>

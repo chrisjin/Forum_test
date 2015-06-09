@@ -31,13 +31,19 @@
     <Compile Include="forum\controller\common\footer.php" />
     <Compile Include="forum\controller\common\header.php" />
     <Compile Include="forum\controller\common\home.php" />
+    <Compile Include="forum\controller\forum\main.php" />
+    <Compile Include="forum\controller\forum\post.php" />
     <Compile Include="forum\controller\forum\section.php" />
+    <Compile Include="forum\controller\forum\thread.php" />
+    <Compile Include="forum\library\forumutil.php" />
     <Compile Include="forum\model\Account\user.php" />
     <Compile Include="forum\model\forum\section.php" />
+    <Compile Include="forum\model\forum\thread.php" />
     <Compile Include="index.php" />
     <Compile Include="system\library\partstoob\nav.php" />
     <Compile Include="system\library\session.php" />
     <Compile Include="system\library\strutil.php" />
+    <Compile Include="system\library\timeutil.php" />
     <Compile Include="system\library\user.php" />
     <Compile Include="system\library\db.php" />
     <Compile Include="system\library\db\mpdo.php" />
@@ -64,9 +70,11 @@
     <Folder Include="forum\model\" />
     <Folder Include="forum\model\Account\" />
     <Folder Include="forum\model\forum\" />
+    <Folder Include="forum\library\" />
     <Folder Include="forum\view\" />
     <Folder Include="forum\view\css\" />
     <Folder Include="forum\view\img\" />
+    <Folder Include="forum\view\forum\" />
     <Folder Include="forum\view\xml\" />
     <Folder Include="system\" />
     <Folder Include="system\library\" />
@@ -77,6 +85,9 @@
     <Content Include="forum\view\about.html" />
     <Content Include="forum\view\css\main.css" />
     <Content Include="forum\view\footer.html" />
+    <Content Include="forum\view\forum\main.html" />
+    <Content Include="forum\view\forum\post.html" />
+    <Content Include="forum\view\forum\thread.html" />
     <Content Include="forum\view\header.html" />
     <Content Include="forum\view\home.html" />
     <Content Include="forum\view\img\logo.png" />
@@ -84,6 +95,6 @@
     <Content Include="forum\view\img\ttt.html" />
     <Content Include="forum\view\login.html" />
     <Content Include="forum\view\register.html" />
-    <Content Include="forum\view\section.html" />
+    <Content Include="forum\view\forum\section.html" />
   </ItemGroup>
 </Project>

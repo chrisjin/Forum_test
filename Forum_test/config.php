@@ -16,3 +16,4 @@ define('DB_DATABASE', 'forum_test');
 define('DB_PREFIX', 'oc_');
 
 define('CONTROLLER_HOME', 'common/home');
+define('TIME_ZONE', 'America/New_York');

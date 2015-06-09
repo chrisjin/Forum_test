@@ -31,18 +31,16 @@ $registry->set('db', $db);
 $user = new User($registry);
 $registry->set('user', $user);
 
+
+TimeUtil::Initialize(TIME_ZONE);
+
 if (isset($request->get['route'])) {
 	$action = new Action($request->get['route']);
 } else {
 	$action = new Action(CONTROLLER_HOME);
 }
 
-//echo StrUtil::form_link('common/home',['path'=>'aaa/bbb']);
 
-//$test_arr=[];
-//$test_arr[]=3;
-//$test_arr[]=4;
-//echo $test_arr[1];
 $action->execute($registry);
 
 

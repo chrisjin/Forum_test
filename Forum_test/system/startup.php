@@ -7,8 +7,18 @@ function autoload($class) {
 
 		return true;
 	} else {
-        echo "File Err:$file<br>";
-		return false;
+        $file = DIR_APPLICATION . 'library/' . str_replace('\\', '/', strtolower($class)) . '.php';
+        if (file_exists($file)) {
+            include_once($file);
+
+            return true;
+        }
+        else {
+        
+            
+            echo "File Err:$file<br>";
+            return false;
+        }
 	}
 }
 
