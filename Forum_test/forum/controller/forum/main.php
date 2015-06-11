@@ -55,11 +55,13 @@ class ForumMainController extends Controller
         if($level<=2)
             $data['body'] = $this->load->controller('forum/section');
         else if($level<=3)
+        {
             $data['body'] = $this->load->controller('forum/thread');
+        }
         else if($level<=4)
             $data['body'] = $this->load->controller('forum/post');
         
-        
+
         $this->response->render($this->load->view('forum/main.html', $data));
 
     }

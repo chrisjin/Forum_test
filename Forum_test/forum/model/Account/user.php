@@ -20,6 +20,11 @@ class AccountUserModel extends Model
         $user_info = $this->db->query("SELECT * FROM user WHERE LOWER(email) = '$email'");
         return $user_info;
     }
+    public function GetUserByID($id)
+    {
+        $user_info = $this->db->query("SELECT * FROM user WHERE user_id = '$id'");
+        return $user_info;
+    }
     public function SetSalt($email, $salt)
     {
         $this->db->query("UPDATE user SET salt = '$salt' WHERE LOWER(email) = '$email'");

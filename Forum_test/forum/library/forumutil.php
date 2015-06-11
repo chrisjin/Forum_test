@@ -10,5 +10,5 @@
  */
 class ForumUtil
 {
-    //public static function 
+    static function Show(){echo "ssssss";} 
 }

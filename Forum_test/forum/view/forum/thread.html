@@ -1,8 +1,34 @@
 ﻿<div class="panel panel-default">
-    <?php foreach($threads as $thread) { ?>
-        <div class="panel-body">
+    <div class="threadheader">
+        Title
+    </div>
+    <ul class="threadlist">
+        <?php foreach($threads as $thread) { ?>
+        <li class="threadlistitem attachments">
 
-            <a href="<?=$thread[1]?>"><?=$thread[0]?></a>
+            <div class="threadtitle">
+                <a href="<?=$thread['url']?>"><?=$thread['title']?></a>
+            </div>
+            <ul class="threadinfo">
+                <li>Last Reply: <?=$thread['lastreply']?></li>
+                <li>Started By <?=$thread['username']?></li>
+            </ul>
+
+        </li>
+        <?php } ?>
+    </ul>
+
+</div>
+<div class="threadeditor">
+    <form role="form" action="<?=$post_url ?>" method="post">
+        <div class="form-group">
+            <p>
+                <input name="title" type="text" class="form-control" placeholder="Title?" />
+            <p>
+
+                <textarea class="ckeditor" cols="80" id="editor1" name="content" rows="10"></textarea>
+            <p>
+                <input type="submit" value="Create" class="btn btn-success" />
         </div>
-    <?php } ?>
+    </form>
 </div>

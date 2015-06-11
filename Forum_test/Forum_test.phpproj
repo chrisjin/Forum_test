@@ -35,6 +35,7 @@
     <Compile Include="forum\controller\forum\post.php" />
     <Compile Include="forum\controller\forum\section.php" />
     <Compile Include="forum\controller\forum\thread.php" />
+    <Compile Include="forum\library\forumcontroller.php" />
     <Compile Include="forum\library\forumutil.php" />
     <Compile Include="forum\model\Account\user.php" />
     <Compile Include="forum\model\forum\section.php" />
