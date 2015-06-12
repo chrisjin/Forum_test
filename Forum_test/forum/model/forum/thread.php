@@ -23,7 +23,7 @@ class ForumThreadModel extends Model
         (title, create_time,lastreply, subsection_id, user_id) 
         VALUES ('$title', '$time', '$time', '$subsectionid', '$userid')");
         $lastid = $this->db->getLastId();
-        $this->AddPost($title, $content, $lastid, $userid, true);
+        $this->AddPost($content, $lastid, $userid, true);
     }
     public function GetThreadByID($threadid)
     {
@@ -35,11 +35,11 @@ class ForumThreadModel extends Model
         $posts = $this->db->query("SELECT * FROM post WHERE thread_id='$threadid'");
         return $posts;
     }
-    public function AddPost($title, $content, $threadid, $userid, $isop = false)
+    public function AddPost($content, $threadid, $userid, $isop = false)
     {
         $time = TimeUtil::TimeStamp();
         $this->db->query("INSERT INTO post 
-        (isop, title, content, post_time, thread_id, user_id) VALUES
-        ('$isop', '$title', '$content', '$time', '$threadid', '$userid')");       
+        (isop, content, post_time, thread_id, user_id) VALUES
+        ('$isop', '$content', '$time', '$threadid', '$userid')");       
     }
 }

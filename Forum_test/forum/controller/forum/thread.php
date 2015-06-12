@@ -10,7 +10,12 @@
  */
 class ForumThreadController extends ForumController
 {
-
+    public function __construct($registry)
+    {
+        parent::__construct($registry);
+        if(count($this->forum_path_arr)!=2)
+            exit();
+    }
     public function index()
     {
         
