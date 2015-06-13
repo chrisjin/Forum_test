@@ -16,6 +16,7 @@ class ForumThreadController extends ForumController
         if(count($this->forum_path_arr)!=2)
             exit();
     }
+    private $pagesize = 4;
     public function index()
     {
         
@@ -39,7 +40,11 @@ class ForumThreadController extends ForumController
         
 
         $subid = $this->forum_path_arr[1];
-        $threadarr = $this->forum_thread_model->GetThreadBySubsectionID($subid)->rows;
+        //$threadarr = $this->forum_thread_model->GetThreadBySubsectionID($subid)->rows;
+        
+        $threadarr = $this->forum_thread_model->GetThreadByRange($this->forum_path_arr[1],
+            $this->pagesize * $this->current_page,
+            $this->pagesize)->rows;
         
         
         $this->load->model('account/user');
@@ -62,6 +67,14 @@ class ForumThreadController extends ForumController
 
         $data['threads'] = $urlarr;
 
+        
+        $numthread = $this->forum_thread_model->GetNumThreadBySubsectionID($this->forum_path_arr[1]);
+        $pagination = $this->load->view('forum/pagination.html', 
+            ['pagination' 
+            => $this->PageLinkByRange($this->current_page, $numthread, $this->pagesize)]);
+        
+        $data['pagination_top'] = $pagination;
+        $data['pagination_bottom'] = $pagination;
         return $this->load->view('forum/thread.html', $data);
     }
 }

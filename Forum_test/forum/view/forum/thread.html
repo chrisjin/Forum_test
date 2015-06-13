@@ -1,6 +1,12 @@
-﻿<div class="panel panel-default">
+﻿<?php echo $pagination_top;?>
+<div class="panel panel-default">
     <div class="threadheader">
-        Title
+        <div class="threadtitle">
+            Title
+        </div>
+        <div class="threadinfo">
+            Info
+        </div>
     </div>
     <ul class="threadlist">
         <?php foreach($threads as $thread) { ?>
@@ -19,6 +25,7 @@
     </ul>
 
 </div>
+<?php echo $pagination_bottom;?>
 <div class="threadeditor">
     <form role="form" action="<?=$post_url ?>" method="post">
         <div class="form-group">
