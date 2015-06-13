@@ -1,0 +1,13 @@
+﻿<ul class="pagination">
+    <?php foreach($pagination as $pagenum => $page) { ?>
+    <?php if($page['currentpage']): ?>
+    <li class="active"><a href="<?=$page['url']?>"><?= $pagenum+1 ?></a></li>
+    <?php elseif($page['firstpage']): ?>
+    <li><a href="<?=$page['url']?>">First</a></li>
+    <?php elseif($page['lastpage']): ?>
+    <li><a href="<?=$page['url']?>">Last</a></li>
+    <?php else: ?>
+    <li><a href="<?=$page['url']?>"><?= $pagenum+1 ?></a></li>
+    <?php endif; ?>
+    <?php } ?>
+</ul>

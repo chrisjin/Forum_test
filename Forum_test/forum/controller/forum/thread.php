@@ -62,7 +62,6 @@ class ForumThreadController extends ForumController
 
         $data['threads'] = $urlarr;
 
-        
         return $this->load->view('forum/thread.html', $data);
     }
 }

@@ -1,13 +1,16 @@
-﻿<div class="panel-group">
+﻿<?php echo $pagination_top;?>
+
+<div class="panel-group">
     <?php foreach($posts as $post) {?>
 
-    <div class="panel panel-primary">
+    <div class="panel panel-info">
         <div class="panel-heading"><?=$post['username']?></div>
         <div class="panel-body"><?=$post['content']?></div>
     </div>
     <?php } ?>
 </div>
 
+<?php echo $pagination_bottom;?>
 
 <div class="threadeditor">
     <form role="form" action="<?=$post_url ?>" method="post">
@@ -19,3 +22,5 @@
         </div>
     </form>
 </div>
+
+

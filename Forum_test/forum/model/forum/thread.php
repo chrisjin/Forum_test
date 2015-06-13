@@ -35,11 +35,21 @@ class ForumThreadModel extends Model
         $posts = $this->db->query("SELECT * FROM post WHERE thread_id='$threadid'");
         return $posts;
     }
+    public function GetPostByRange($threadid, $offset, $limit)
+    {
+        $posts = $this->db->query("SELECT * FROM post WHERE thread_id='$threadid' LIMIT $limit OFFSET $offset");
+        return $posts;
+    }
     public function AddPost($content, $threadid, $userid, $isop = false)
     {
         $time = TimeUtil::TimeStamp();
         $this->db->query("INSERT INTO post 
         (isop, content, post_time, thread_id, user_id) VALUES
         ('$isop', '$content', '$time', '$threadid', '$userid')");       
+    }
+    public function GetNumPostByThreadID($threadid)
+    {
+        $posts = $this->db->query("SELECT count(*) FROM post WHERE thread_id='$threadid'")->row;
+        return $posts['count(*)'];
     }
 }
