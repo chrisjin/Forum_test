@@ -41,6 +41,7 @@
     <Compile Include="forum\model\forum\section.php" />
     <Compile Include="forum\model\forum\thread.php" />
     <Compile Include="index.php" />
+    <Compile Include="purge.php" />
     <Compile Include="system\library\partstoob\nav.php" />
     <Compile Include="system\library\session.php" />
     <Compile Include="system\library\strutil.php" />

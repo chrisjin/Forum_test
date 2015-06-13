@@ -17,7 +17,7 @@ class AccountLoginController extends Controller
     {
         if($userquery->num_rows == 1)
         {
-            if($password == $userquery->row['password'])
+            if(StrUtil::password_hash($password) == $userquery->row['password'])
             {
                 return AccountLoginController::SUCC;
             }

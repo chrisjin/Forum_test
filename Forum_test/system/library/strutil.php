@@ -20,6 +20,10 @@ class StrUtil
     //    }
         
     //}
+    static function password_hash($password)
+    {
+        return md5($password);
+    }
     static function form_link($controller, $args = array())
     {
         $argstr='';  
