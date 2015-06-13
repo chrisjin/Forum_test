@@ -35,23 +35,34 @@ class ForumPostController extends ForumController
                 $userid = $this->user->GetUserID();
                 $threadid = $this->forum_path_arr[2];
                 
-                //echo $this->request->full_path();
+
                 $this->forum_thread_model->AddPost($content, $threadid, $userid);             
                 $this->response->redirect($this->request->full_path());
             }
         }
-        
-        //$posts = $this->forum_thread_model->GetPostByThreadID($this->forum_path_arr[2])->rows;
+        $thread = $this->forum_thread_model->GetThreadByID($this->forum_path_arr[2])->rows;
+        assert(count($thread) == 1);
+        $thread = $thread[0];
+        $data['thread_title'] = $thread['title'];
+
         $posts = $this->forum_thread_model->GetPostByRange($this->forum_path_arr[2],
             $this->pagesize * $this->current_page,
             $this->pagesize)->rows;
         
+
+        
+        
         $this->load->model('account/user');
+        $row_num = $this->pagesize * $this->current_page;
         foreach($posts as &$post)
         {
             $user_info = $this->account_user_model->GetUserByID($post['user_id'])->rows;
             $post['username'] = $user_info[0]['username'];
             $post['content'] = htmlspecialchars_decode($post['content']);
+            $post['row_num'] = $row_num;
+            $post['post_time'] = date('m/d/Y, H:i:s', strtotime($post['post_time']));
+            $post['avatar'] = 'forum/view/img/avatar.jpg';
+            $row_num++;
         }
         $data['posts'] = $posts;
         

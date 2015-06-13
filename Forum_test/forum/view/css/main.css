@@ -96,14 +96,39 @@ li {
   position: relative;
 }
 
-.postuserinfo{
-    display:inline;
+.postuserinfo {
+    margin-left:50px;
 }
 
+.postinfo{
+    margin-left:50px;
+}
+
+.posttitle {
+    display: block;
+    border: 1px solid #cecece;
+    padding: 5px 10px;
+    margin: 5px;
+    
+}
 .inner-addon { 
     position: relative; 
 }
 
+.avatar {
+    display: inline-block;
+    float: left;
+    width: 60px;
+    height:60px;
+    margin: -10px -15px;
+}
+    .avatar > img {
+    position: relative;
+    top: 25%;
+    left: 25%;
+    margin-right: -25%;
+
+    }
 /* style icon */
 .inner-addon .glyphicon {
   position: absolute;

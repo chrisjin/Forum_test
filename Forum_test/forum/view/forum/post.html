@@ -1,10 +1,23 @@
 ﻿<?php echo $pagination_top;?>
-
+<div class="posttitle">
+    <b>Thread: </b><?=$thread_title?>
+</div>
 <div class="panel-group">
     <?php foreach($posts as $post) {?>
 
     <div class="panel panel-info">
-        <div class="panel-heading"><?=$post['username']?></div>
+        <div class="panel-heading">
+            <div class="avatar">
+                <img src="<?=$post['avatar']?>" />
+            </div>
+            <div class="postinfo">
+                <?=$post['post_time']?>
+                <span class="pull-right">#<?=$post['row_num']+1?></span>
+            </div>
+            <div class="postuserinfo">
+                <?=$post['username']?>
+            </div>
+        </div>
         <div class="panel-body"><?=$post['content']?></div>
     </div>
     <?php } ?>

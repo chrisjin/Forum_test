@@ -87,6 +87,7 @@
     <Content Include="forum\view\css\main.css" />
     <Content Include="forum\view\footer.html" />
     <Content Include="forum\view\forum\main.html" />
+    <Content Include="forum\view\forum\pagination.html" />
     <Content Include="forum\view\forum\post.html" />
     <Content Include="forum\view\forum\thread.html" />
     <Content Include="forum\view\header.html" />

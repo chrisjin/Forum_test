@@ -42,7 +42,7 @@ class ForumController extends Controller
     {
         
         $numpage = (int)($numitems / $pagesize);
-        echo $numitems;
+        //echo $numitems;
         if($numitems % $pagesize != 0)
             $numpage++;
         if($currentpage >= $numpage)
