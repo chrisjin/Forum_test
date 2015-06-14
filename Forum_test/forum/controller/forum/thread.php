@@ -30,8 +30,10 @@ class ForumThreadController extends ForumController
                 $content = $this->request->post['content'];
                 $userid = $this->user->GetUserID();
                 $subsectionid = $this->forum_path_arr[1];
-                $this->forum_thread_model->AddThread($title, $content, $subsectionid, $userid);
-                
+                if(strlen($title) > 0 && strlen($content) > 0)
+                {
+                    $this->forum_thread_model->AddThread($title, $content, $subsectionid, $userid);
+                }
                 $this->response->redirect($this->current_full_path);
             }
         }

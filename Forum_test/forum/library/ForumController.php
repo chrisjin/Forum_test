@@ -43,11 +43,11 @@ class ForumController extends Controller
         
         $numpage = (int)($numitems / $pagesize);
         //echo $numitems;
-        if($numitems % $pagesize != 0)
+        if($numitems % $pagesize != 0 || $numitems == 0)
             $numpage++;
         if($currentpage >= $numpage)
             return NULL;
-        
+
 
         $firsturl['url'] = $this->PageLink(0);
         $firsturl['firstpage'] = true;

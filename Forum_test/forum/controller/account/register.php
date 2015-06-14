@@ -24,14 +24,17 @@ class AccountregisterController extends Controller
             $this->load->model('account/user');
              
             if($this->request->post['password'] 
-                == $this->request->post['password_again'])
+                == $this->request->post['password_again']
+                && strlen($this->request->post['email']) > 0
+                && strlen($this->request->post['username']) > 0
+                && strlen($this->request->post['password']) > 0)
             {
                 $this->request->post['password'] = StrUtil::password_hash($this->request->post['password']);
                 $this->account_user_model->AddUser( $this->request->post);
             }
             
             //$this->account_user_model->Insert('user', $this->request->post, array('username', 'email', 'password'));
-            exit();
+            $this->response->redirect(StrUtil::form_link('account/login'));
         }
         else
         {

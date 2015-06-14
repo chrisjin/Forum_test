@@ -35,8 +35,10 @@ class ForumPostController extends ForumController
                 $userid = $this->user->GetUserID();
                 $threadid = $this->forum_path_arr[2];
                 
-                
-                $this->forum_thread_model->AddPost($content, $threadid, $userid);             
+                if(strlen($content) > 0)
+                {
+                    $this->forum_thread_model->AddPost($content, $threadid, $userid);
+                }
                 $this->response->redirect($this->request->full_path());
             }
         }

@@ -26,12 +26,11 @@
 <?php echo $pagination_bottom;?>
 
 <div class="threadeditor">
-    <form role="form" action="<?=$post_url ?>" method="post">
-        <div class="form-group">
+    <form role="form" action="<?=$post_url ?>" method="post" data-toggle='formvalidator'>
+        <div class="foruminputform">
 
             <textarea class="ckeditor" cols="80" id="editor1" name="content" rows="10"></textarea>
-            <p>
-                <input type="submit" value="Submit" style="margin: 10px 0px" class="btn btn-success" />
+            <input type="submit" value="Submit" class="btn btn-success" />
         </div>
     </form>
 </div>

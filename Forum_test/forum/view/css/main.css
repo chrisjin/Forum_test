@@ -191,3 +191,12 @@ li {
     display: inline-block;
 
 }
+
+.foruminputform{
+    margin-bottom: 15px;
+}
+
+.foruminputform input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
