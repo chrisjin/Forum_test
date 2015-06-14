@@ -32,7 +32,7 @@ class StrUtil
             $argstr.= ('&' . $name . '=' . $value);
         }
         
-        $url = '/index.php?route=' . $controller ;
+        $url = HTTP_SERVER . 'index.php?route=' . $controller ;
         if (count($args)>0) {
             $url .= str_replace('&', '&amp;', '&' . ltrim($argstr, '&'));
         }

@@ -26,10 +26,10 @@ class ForumThreadController extends ForumController
         {
             if($this->user->IsLogged())
             {
-                $title = $this->request->post['title'] . '<br>';
-                $content = $this->request->post['content'] . '<br>';
-                $userid = $this->user->GetUserID(). '<br>';
-                $subsectionid = $this->forum_path_arr[1]. '<br>';
+                $title = $this->request->post['title'];
+                $content = $this->request->post['content'];
+                $userid = $this->user->GetUserID();
+                $subsectionid = $this->forum_path_arr[1];
                 $this->forum_thread_model->AddThread($title, $content, $subsectionid, $userid);
                 
                 $this->response->redirect($this->current_full_path);

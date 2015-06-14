@@ -37,11 +37,11 @@
     <Compile Include="forum\controller\forum\thread.php" />
     <Compile Include="forum\library\forumcontroller.php" />
     <Compile Include="forum\library\forumutil.php" />
-    <Compile Include="forum\model\Account\user.php" />
+    <Compile Include="forum\model\account\user.php" />
     <Compile Include="forum\model\forum\section.php" />
     <Compile Include="forum\model\forum\thread.php" />
     <Compile Include="index.php" />
-    <Compile Include="purge.php" />
+    <Compile Include="install.php" />
     <Compile Include="system\library\partstoob\nav.php" />
     <Compile Include="system\library\session.php" />
     <Compile Include="system\library\strutil.php" />
@@ -70,7 +70,7 @@
     <Folder Include="forum\controller\common\" />
     <Folder Include="forum\controller\forum\" />
     <Folder Include="forum\model\" />
-    <Folder Include="forum\model\Account\" />
+    <Folder Include="forum\model\account\" />
     <Folder Include="forum\model\forum\" />
     <Folder Include="forum\library\" />
     <Folder Include="forum\view\" />

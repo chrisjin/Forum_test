@@ -23,7 +23,7 @@ class CommonHeaderController extends Controller
 
         $this->data['headeritem'] = 
             PartStoob\Nav::items([
-            'Home' => ['/index.php', 'home'],
+            'Home' => [HTTP_SERVER . 'index.php', 'home'],
             'Forum' => [$this->url->link('forum/main'), 'forum'],
             'About Us' => [$this->url->link('common/about'), 'about']
             ]);
