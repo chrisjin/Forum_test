@@ -17,6 +17,7 @@ class CommonHomeController extends Controller
         $data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
         
+        $data['forum_link'] = $this->url->link('forum/main');
         $this->response->render($this->load->view('home.html', $data));
     }
 }

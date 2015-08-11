@@ -20,7 +20,8 @@ class CommonHeaderController extends Controller
         $this->data['email'] = $this->user->GetEmail();
         $this->data['username'] = $this->user->GetUserName();
         
-
+        $this->data['logo'] = 'forum/view/img/logo.png';
+        
         $this->data['headeritem'] = 
             PartStoob\Nav::items([
             'Home' => [HTTP_SERVER . 'index.php', 'home'],

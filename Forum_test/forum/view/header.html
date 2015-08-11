@@ -3,18 +3,27 @@
 <head>
     <!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="forum/view/css/main.css" rel="stylesheet">
-    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>-->
+    <link href="forum/view/css/main.css" rel="stylesheet">-->
+    <!--<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>-->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/css/bootstrapvalidator.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>-->
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!--<script src="forum/view/assets/bootstrap/js/bootstrap.min.js"></script>-->
+
+
+    <link rel="stylesheet" href="forum/view/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="forum/view/assets/animate/animate.css" />
+    <link rel="stylesheet" href="forum/view/assets/animate/set.css" />
 
     <link href="forum/view/css/main.css" rel="stylesheet">
+    <link href="forum/view/css/style.css" rel="stylesheet">
     <link href="forum/view/css/reset.css" rel="stylesheet">
     <script src="forum/view/ckeditor/ckeditor.js"></script>
 
@@ -31,47 +40,63 @@
     </style>
 </head>
 <body style="margin:0">
-    <div id="headerlogo">
+    <!--<div id="headerlogo">
         <div id="headertext">Syracuse!</div>
-    </div>
-    <nav class="navbar navbar-default" id="topbar" role="navigation">
+    </div>-->
 
-        <div class="navbar-inner container">
+            <nav class="navbar navbar-default" id="topbar" role="navigation">
 
-            <ul class="nav navbar-nav  navbar-left">
-                <?= $headeritem ?>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <?php if(!$islogged) {?>
-                <li>
-                    <a href='<?php echo $link_login ?>'>
-                        <span class="glyphicon glyphicon-log-in"></span>
-                        login
-                    </a>
-                </li>
-                <li>
-                    <a href='<?php echo $link_register ?>'>
-                        <span class="glyphicon glyphicon-user"></span>
-                        register
-                    </a>
-                </li>
-                <?php } else {?>
-                <li class="dropdown">
-                    <a href='#' class="dropdown-toggle" data-toggle="dropdown" role="button">
-                        <span class="glyphicon glyphicon-user"></span>
-                        <?= $username ?> (<?= $email ?>)
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                        <li><a href="#">Settings</a></li>
-                        <li class="divider"></li>
-                        <li><a href="<?=$link_logout?>">Logout</a></li>
+                <div class="navbar-inner container">
+                    <div class="navbar-header">
+                        <!-- Logo Starts -->
+                        <a class="navbar-brand" href="#home"><img src="<?= $logo ?>" alt="logo"/></a>
+                        <!-- #Logo Ends -->
 
+
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+
+                    <ul class="nav navbar-nav  navbar-left">
+                        <?= $headeritem ?>
                     </ul>
-                </li>
-                <?php }?>
-            </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <?php if(!$islogged) {?>
+                        <li>
+                            <a href='<?php echo $link_login ?>'>
+                                <span class="glyphicon glyphicon-log-in"></span>
+                                login
+                            </a>
+                        </li>
+                        <li>
+                            <a href='<?php echo $link_register ?>'>
+                                <span class="glyphicon glyphicon-user"></span>
+                                register
+                            </a>
+                        </li>
+                        <?php } else {?>
+                        <li class="dropdown">
+                            <a href='#' class="dropdown-toggle" data-toggle="dropdown" role="button">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <?= $username ?> (<?= $email ?>)
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                <li><a href="#">Settings</a></li>
+                                <li class="divider"></li>
+                                <li><a href="<?=$link_logout?>">Logout</a></li>
 
-        </div>
-    </nav>
+                            </ul>
+                        </li>
+                        <?php }?>
+                    </ul>
+
+                </div>
+            </nav>
+
 

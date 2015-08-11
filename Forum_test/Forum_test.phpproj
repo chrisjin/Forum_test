@@ -75,6 +75,7 @@
     <Folder Include="forum\library\" />
     <Folder Include="forum\view\" />
     <Folder Include="forum\view\css\" />
+    <Folder Include="forum\view\formvalidator\" />
     <Folder Include="forum\view\img\" />
     <Folder Include="forum\view\forum\" />
     <Folder Include="forum\view\xml\" />
@@ -86,7 +87,10 @@
   <ItemGroup>
     <Content Include="forum\view\about.html" />
     <Content Include="forum\view\css\main.css" />
+    <Content Include="forum\view\css\reset.css" />
+    <Content Include="forum\view\css\style.css" />
     <Content Include="forum\view\footer.html" />
+    <Content Include="forum\view\formvalidator\validator.js" />
     <Content Include="forum\view\forum\main.html" />
     <Content Include="forum\view\forum\pagination.html" />
     <Content Include="forum\view\forum\post.html" />
@@ -99,5 +103,7 @@
     <Content Include="forum\view\login.html" />
     <Content Include="forum\view\register.html" />
     <Content Include="forum\view\forum\section.html" />
+    <Content Include="forum\view\register_fail.html" />
+    <Content Include="forum\view\register_succ.html" />
   </ItemGroup>
 </Project>

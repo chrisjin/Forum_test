@@ -17,23 +17,29 @@ function HandleTextInput(form) {
         });
     });
 }
+
 function CheckInputByLength(theInput) {
-    var attr = theInput.attr('data-minlength');
-    if (typeof (attr) != "undefined" && attr !== null) {
-        if (theInput.val().length >= attr) {
-            return true;
-        }
-        else
-            return false;
+    var attrmin = theInput.attr('data-minlength');
+    var attrmax = theInput.attr('data-maxlength');
+    if (typeof (attrmin) == "undefined" || attrmin == null) {
+        attrmin = -Number.MAX_VALUE;
+    }
+    if (typeof (attrmax) == "undefined" || attrmax == null) {
+        attrmax = Number.MAX_VALUE;
+    }
+    if (theInput.val().length >= attrmin && theInput.val().length<= attrmax) {
+        return true;
     }
     else
-        return true;
+        return false;
 }
+
 
 function IsEmail(theStr) {
     var reg = new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$");
     return reg.test(theStr);
 }
+
 function CheckInputByType(theInput) {
     var attr = theInput.attr('data-type');
     if (typeof (attr) != "undefined" && attr !== null) {
@@ -59,8 +65,11 @@ function CheckInputByRegex(theInput) {
     else
         return true;
 }
-function CheckInput(theInput)
-{
+
+function GetErrorBlockID(theInput) {
+}
+
+function CheckInput(theInput){
     var aRet = true;
     aRet &= CheckInputByLength(theInput);
     aRet &= CheckInputByRegex(theInput);
@@ -69,16 +78,21 @@ function CheckInput(theInput)
 }
 
 
-function MakeInputValid(theInput, theBool) {
+function MakeInputValid(theInput, theBool, warnblockid) {
+    if (typeof warnblockid === 'undefined')
+        warnblockid = "";
+    else
+        warnblockid = "#" + warnblockid;
+    var selector = ".help-block" + warnblockid;
     if (theBool) {
-        if (theInput.next("span.help-block").exists())
-            theInput.next("span.help-block").hide();
+        if (theInput.next(selector).exists())
+            theInput.next(selector).hide();
         theInput.parent('.form-group').removeClass('has-error');
     }
     else {
         theInput.parent('.form-group').addClass('has-error');
-        if (theInput.next("span.help-block").exists())
-            theInput.next("span.help-block").show();
+        if (theInput.next(selector).exists())
+            theInput.next(selector).show();
     }
 }
 function UpdateInput(theInput) {
@@ -118,3 +132,20 @@ $("form[data-toggle='formvalidator']").submit(function (e) {
         alert('Please fill all fields!');
 });
 
+
+
+//function People() {  
+//    testvar = "E";
+//}
+
+//People.prototype.KKK = function () {
+//    this.testvar = "U";
+//};
+//var p1 = new People();
+//alert(testvar);
+//alert(typeof People.prototype);
+////??
+//var p1 = new People("Windking");
+//p1.Introduce();
+//People.Run();
+//p1.IntroduceChinese();

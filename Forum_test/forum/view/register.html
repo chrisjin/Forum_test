@@ -1,15 +1,25 @@
 <?php echo $header?>
-<div style="padding: 0% 40% 0 40%;">
-    <form class="bs-example bs-example-form" action="<?=$action_post ?>" method="post">
+<div style="padding: 0% 40% 0 40%;" class="main-panel">
+    <form data-toggle="formvalidator" class="bs-example bs-example-form" action="<?=$action_post ?>" method="post">
 
         <div class="inner-addon left-addon">
             <i class="glyphicon glyphicon-envelope"></i>
-            <input name="<?=$email?>" type="text" class="form-control" placeholder="Email" />
+            <div class="form-group">
+                <input data-type="email" name="<?=$email?>" type="text" class="form-control" placeholder="Email" />
+                <span class="help-block with-errors">
+                    Please fill with correct email address.
+                </span>
+            </div>
         </div>
         <br>
         <div class="inner-addon left-addon">
             <i class="glyphicon glyphicon-user"></i>
-            <input name="<?=$username?>" type="text" class="form-control" placeholder="User Name" />
+            <div class="form-group">
+                <input data-minlength="3" name="<?=$username?>" type="text" class="form-control" placeholder="User Name" />
+                <span class="help-block with-errors">
+                    At least 3 characters.
+                </span>
+            </div>
         </div>
         <br>
         <div class="inner-addon left-addon">
