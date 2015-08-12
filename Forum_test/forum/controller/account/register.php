@@ -42,7 +42,15 @@ class AccountregisterController extends Controller
                 $data['info']="Register successful!";
                 $data['login_link'] = $this->url->link('account/login');
                 $this->response->render($this->load->view('register_succ.html', $data));
-            }    
+            }  
+            else
+            {
+                if(strlen($this->request->post['password']) == 0)
+                    $data['info']="Password can not be empty!";
+                if($this->request->post['password']  != $this->request->post['password_again'])
+                    $data['info']="Password not consistent!";
+                $this->response->render($this->load->view('register_fail.html', $data));
+            }
             //$this->account_user_model->Insert('user', $this->request->post, array('username', 'email', 'password'));
             
         }

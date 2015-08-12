@@ -126,10 +126,10 @@ $("form[data-toggle='formvalidator']").submit(function (e) {
     e.preventDefault();
     if (CheckAllInput($(this))) {
         this.submit();
-        alert('Submit Successful!');
+        //alert('Submit Successful!');
     }
-    else
-        alert('Please fill all fields!');
+    //else
+    //    alert('Please fill all fields!');
 });
 
 

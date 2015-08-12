@@ -57,8 +57,8 @@ class AccountLoginController extends Controller
             }
             else
             {
-                //$this->response->render($this->load->view('login.html', $data));  
-                echo 'fail';
+                $data['info'] = 'Fail to login!';
+                $this->response->render($this->load->view('login_fail.html', $data));  
             }
         }
         else
