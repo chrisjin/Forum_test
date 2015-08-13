@@ -64,6 +64,10 @@ class ForumPostController extends ForumController
             $post['row_num'] = $row_num;
             $post['post_time'] = date('m/d/Y, H:i:s', strtotime($post['post_time']));
             $post['avatar'] = 'forum/view/img/avatar.jpg';
+            $post_id = $post['post_id'];
+            $post['delete_url'] = StrUtil::form_link('forum/delete',
+                        ['postid'=>"$post_id",
+                        'path'=>"$this->forum_path"]);
             $row_num++;
         }
         $data['posts'] = $posts;
@@ -80,7 +84,7 @@ class ForumPostController extends ForumController
         $data['pagination_top'] = $pagination;
         $data['pagination_bottom'] = $pagination;
         
-
+        $data['auth_level'] = $this->user->GetAuthLevel();
         return $this->load->view('forum/post.html', $data);
     }
 }

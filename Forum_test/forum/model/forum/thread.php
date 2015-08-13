@@ -35,12 +35,21 @@ class ForumThreadModel extends Model
         $posts = $this->db->query("SELECT * FROM post WHERE thread_id='$threadid'");
         return $posts;
     }
-
     public function GetPostByRange($threadid, $offset, $limit)
     {
         $posts = $this->db->query("SELECT * FROM post WHERE thread_id='$threadid' ORDER BY post_time ASC LIMIT $limit OFFSET $offset");
         return $posts;
     }
+    public function DeletePostByID($postid)
+    {
+        $this->db->query("DELETE FROM post WHERE post_id='$postid'");
+    }
+    public function DeleteThreadByID($threadid)
+    {
+        $this->db->query("DELETE FROM post WHERE thread_id='$threadid'");
+        $this->db->query("DELETE FROM thread WHERE thread_id='$threadid'");
+    }
+    
     public function GetThreadByRange($subid,  $offset, $limit)
     {
         $threads = $this->db->query("SELECT * FROM thread WHERE subsection_id='$subid' ORDER BY lastreply DESC LIMIT $limit OFFSET $offset");

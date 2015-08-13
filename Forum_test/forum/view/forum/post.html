@@ -16,6 +16,11 @@
             </div>
             <div class="postuserinfo">
                 <?=$post['username']?>
+                <?php if($auth_level == 1) { ?>
+                <div class="threadright">
+                    <a href="<?=$post['delete_url']?>">Delete</a>
+                </div>
+                <?php } ?>
             </div>
         </div>
         <div class="panel-body"><?=$post['content']?></div>

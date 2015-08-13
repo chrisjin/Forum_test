@@ -14,6 +14,7 @@ class User
     private $logged;
     private $userid;
     private $username;
+    private $auth_level;
     public function GetEmail()
     {
         return $this->email;
@@ -38,6 +39,7 @@ class User
             $user_info = $this->db->query("SELECT * FROM user WHERE LOWER(email) = '$email'");
             
             $this->logged = false;
+            $this->auth_level = 0;
             if($user_info->num_rows == 1)
             {
                 if($token == $user_info->row['salt'])
@@ -46,10 +48,22 @@ class User
                     $this->logged = true;
                     $this->userid = $user_info->row['user_id'];
                     $this->username = $user_info->row['username'];
+                    if(isset($user_info->row['auth_level']))
+                    {
+                        $this->auth_level = $user_info->row['auth_level'];
+                    }
+                    else
+                    {
+                        $this->auth_level = 0;
+                    }
                 }
             }
         }
 
+    }
+    public function GetAuthLevel()
+    {
+        return $this->auth_level;
     }
     public function  IsLogged()
     {

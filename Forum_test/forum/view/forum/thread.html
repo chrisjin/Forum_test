@@ -19,7 +19,13 @@
                 <li>Last Reply: <?=$thread['lastreply']?></li>
                 <li>Started By <?=$thread['username']?></li>
             </ul>
-
+            <?php if($auth_level == 1) {?>
+            <div class="threadright">
+                <a href="<?=$thread['delete_url']?>">
+                    Delete
+                </a>
+            </div>
+            <?php } ?>
         </li>
         <?php } ?>
         <?php if(count($threads) == 0) {?>

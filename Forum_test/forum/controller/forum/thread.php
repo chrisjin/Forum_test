@@ -62,6 +62,11 @@ class ForumThreadController extends ForumController
             $user_info = $this->account_user_model->GetUserByID($thread['user_id'])->rows;
 
             $threadinfo['username'] = $user_info[0]['username'];
+            
+            $threadinfo['delete_url'] = StrUtil::form_link('forum/delete',
+                        ['threadid'=>"$thid",
+                        'path'=>"$this->forum_path"
+                        ]);
             //$urlarr[]=[$title, $url]; 
             $urlarr[]=$threadinfo;
         }
@@ -77,6 +82,8 @@ class ForumThreadController extends ForumController
         
         $data['pagination_top'] = $pagination;
         $data['pagination_bottom'] = $pagination;
+        
+        $data['auth_level'] = $this->user->GetAuthLevel();
         return $this->load->view('forum/thread.html', $data);
     }
 }

@@ -35,6 +35,10 @@
 .threadinfo{
     display:inline-block;
 }
+.threadright{
+    display:inline-block;
+    float: right;
+}
 li {
   list-style: none;
 }
