@@ -90,6 +90,7 @@
     <Content Include="forum\view\css\main.css" />
     <Content Include="forum\view\css\reset.css" />
     <Content Include="forum\view\css\style.css" />
+    <Content Include="forum\view\error.html" />
     <Content Include="forum\view\footer.html" />
     <Content Include="forum\view\formvalidator\validator.js" />
     <Content Include="forum\view\forum\main.html" />

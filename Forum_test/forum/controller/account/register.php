@@ -63,7 +63,7 @@ class AccountregisterController extends Controller
             $data['username'] = 'username';
             $data['password'] = 'password';
             $data['password_again']= 'password_again';
-            
+            $data['activation'] = 'activation';
             
             $this->response->render($this->load->view('register.html', $data));
         }
