@@ -25,8 +25,10 @@ class CommonHeaderController extends Controller
         $this->data['headeritem'] = 
             PartStoob\Nav::items([
             'Home' => [HTTP_SERVER . 'index.php', 'home'],
-            'Forum' => [$this->url->link('forum/main'), 'forum'],
-            'About Us' => [$this->url->link('common/about'), 'about']
+            'Visit CDF' => [$this->url->link('forum/main'), 'forum'],
+            'Recruitment' => [$this->url->link('common/recruitment', ['view' =>'recruitment.html']), 'recruitment'],
+            'About Us' => [$this->url->link('common/about'), 'about'],
+            'Contact Us' => [$this->url->link('common/contact', ['view' =>'contact.html']), 'contact'],
             ]);
         return $this->load->view('header.html', $this->data);
     }

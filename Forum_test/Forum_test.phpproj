@@ -29,6 +29,7 @@
     <Compile Include="forum\controller\account\register.php" />
     <Compile Include="forum\controller\common\about.php" />
     <Compile Include="forum\controller\common\footer.php" />
+    <Compile Include="forum\controller\common\gen.php" />
     <Compile Include="forum\controller\common\header.php" />
     <Compile Include="forum\controller\common\home.php" />
     <Compile Include="forum\controller\forum\delete.php" />
@@ -87,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="forum\view\about.html" />
+    <Content Include="forum\view\contact.html" />
     <Content Include="forum\view\css\main.css" />
     <Content Include="forum\view\css\reset.css" />
     <Content Include="forum\view\css\style.css" />
@@ -104,6 +106,7 @@
     <Content Include="forum\view\img\ttt.html" />
     <Content Include="forum\view\login.html" />
     <Content Include="forum\view\login_fail.html" />
+    <Content Include="forum\view\recruitment.html" />
     <Content Include="forum\view\register.html" />
     <Content Include="forum\view\forum\section.html" />
     <Content Include="forum\view\register_fail.html" />

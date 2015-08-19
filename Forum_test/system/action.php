@@ -35,6 +35,11 @@ class Action
 				$this->class = preg_replace('/[^a-zA-Z0-9]/', '', $path) . 'Controller' ;
 				break;
 			}
+            else 
+            {
+                $this->file = DIR_APPLICATION . 'controller/common/gen.php';
+                $this->class = 'CommonGenController';
+            }
         }
         
         if ($args) {
@@ -55,10 +60,10 @@ class Action
 		if (substr($this->method, 0, 2) == '__') {
 			return false;
 		}
-
+        //echo $this->file;
 		if (is_file($this->file)) {
 			include_once($this->file);
-
+            
 			$class = $this->class;
             
 			$controller = new $class($registry);
@@ -69,7 +74,8 @@ class Action
 				return false;
 			}
 		} else {
-            echo $this->file . 'does not exist!';
+            
+            echo $this->file . 'does not exists!';
 			return false;
 		}
         
