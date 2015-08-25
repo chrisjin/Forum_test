@@ -13,6 +13,17 @@ class AccountregisterController extends Controller
     const SUCC = 1;
     const FAIL = 2;
     const NOUSER =3;
+    
+    function Create_UUID($prefix = ""){    //??????
+        $str = md5(uniqid(mt_rand(), true));   
+        $uuid  = substr($str,0,8) . '-';   
+        $uuid .= substr($str,8,4) . '-';   
+        $uuid .= substr($str,12,4) . '-';   
+        $uuid .= substr($str,16,4) . '-';   
+        $uuid .= substr($str,20,12);   
+        return $prefix . $uuid;
+    }
+    
     public function index() 
     {
         $data['footer'] = $this->load->controller('common/footer');
@@ -36,11 +47,16 @@ class AccountregisterController extends Controller
                 && strlen($this->request->post['password']) > 0)
             {
                 $this->request->post['password'] = StrUtil::password_hash($this->request->post['password']);
+                
                 $this->account_user_model->AddUser( $this->request->post);
+                $this->account_user_model->SetActivateCode($this->request->post['email'], $this->Create_UUID());
+                
                 $data['email'] = $this->request->post['email'];
                 $data['username'] = $this->request->post['username'];
                 $data['info']="Register successful!";
                 $data['login_link'] = $this->url->link('account/login');
+                $data['activate_link'] = $this->url->link('account/activate', ['email' => $data['email'] ]);
+                   
                 $this->response->render($this->load->view('register_succ.html', $data));
             }  
             else

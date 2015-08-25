@@ -15,6 +15,24 @@ class AccountUserModel extends Model
     {
         $this->Insert('user', $data, array('email', 'username', 'password'));
     }
+    public function SetActivateCode($email, $code)
+    {
+        $this->db->query("INSERT INTO activate (email, code) VALUES ('$email', '$code')");
+    }
+    public function GetActivateCode($email)
+    {
+        $query_info = $this->db->query("SELECT * FROM activate WHERE LOWER(email) = '$email'");
+        if(count($query_info->rows) == 1)
+        {
+            if(isset($query_info->row['code']))
+            {
+                return $query_info->row['code'];
+            }
+            return false;
+        }
+        else
+            return false;
+    }
     public function GetUserByEmail($email)
     {
         $user_info = $this->db->query("SELECT * FROM user WHERE LOWER(email) = '$email'");
@@ -38,5 +56,9 @@ class AccountUserModel extends Model
         }
         else
             return false;
+    }
+    public function SetAuthLevel($email, $level)
+    {
+        $this->db->query("UPDATE user SET auth_level = '$level' WHERE LOWER(email) = '$email'");
     }
 }

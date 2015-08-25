@@ -1,0 +1,19 @@
+﻿<?php echo $header?>
+
+<div class="dialog-panel">
+    <?=$info?>
+    <p>
+        <?php 
+        if(!isset($link))
+        {
+            $link = 'javascript:history.back()';
+        }
+        if(!isset($link_msg))
+        {
+            $link_msg =  'Go Back...';
+        }
+        ?>
+        <a href="<?=$link?>"><?=$link_msg?></a>
+</div>
+
+<?php echo $footer ?>

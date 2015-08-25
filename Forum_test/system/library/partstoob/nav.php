@@ -9,6 +9,10 @@
  * @author C
  */
 
+//
+//http://php.net/manual/en/language.oop5.paamayim-nekudotayim.php#84155
+//$this->request will be found in its owner. better created here. to be done!
+//
 namespace PartStoob;
 class Nav
 {

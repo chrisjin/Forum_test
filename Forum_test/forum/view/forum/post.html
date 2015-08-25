@@ -30,6 +30,7 @@
 
 <?php echo $pagination_bottom;?>
 
+<?php if($auth_level >= 1) {?>
 <div class="threadeditor">
     <form role="form" action="<?=$post_url ?>" method="post" data-toggle='formvalidator'>
         <div class="foruminputform">
@@ -39,5 +40,6 @@
         </div>
     </form>
 </div>
+<?php } ?>
 
 

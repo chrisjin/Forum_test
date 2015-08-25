@@ -9,7 +9,7 @@
 
 //define('DB_DATABASE', 'forum_test');
 define('DB_DATABASE', 'forum_test');
-define('HTTP_SERVER', '/');
+define('HTTP_SERVER', 'http://localhost:48797/');
 
 
 define('DIR_APPLICATION', './forum/');
@@ -27,3 +27,13 @@ define('DB_PREFIX', 'oc_');
 
 define('CONTROLLER_HOME', 'common/home');
 define('TIME_ZONE', 'America/New_York');
+
+//cdfuserservice123
+//cdfuserservice@gmail.com
+
+define('EMAIL_ADDRESS', 'cdfuserservice@gmail.com');
+define('EMAIL_HOST', 'smtp.gmail.com');
+define('EMAIL_FROMNAME', 'CDF User Service');
+define('EMAIL_PASSWORD', 'cdfuserservice123');
+define('EMAIL_HOST_PORT', 587);
+define('EMAIL_SECURE', 'tls');

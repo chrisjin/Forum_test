@@ -24,6 +24,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="config.php" />
+    <Compile Include="forum\controller\account\activate.php" />
     <Compile Include="forum\controller\account\login.php" />
     <Compile Include="forum\controller\account\logout.php" />
     <Compile Include="forum\controller\account\register.php" />
@@ -88,11 +89,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="forum\view\about.html" />
+    <Content Include="forum\view\activate.html" />
+    <Content Include="forum\view\chapters.html" />
+    <Content Include="forum\view\committee.html" />
     <Content Include="forum\view\contact.html" />
     <Content Include="forum\view\css\main.css" />
     <Content Include="forum\view\css\reset.css" />
     <Content Include="forum\view\css\style.css" />
     <Content Include="forum\view\error.html" />
+    <Content Include="forum\view\event.html" />
     <Content Include="forum\view\footer.html" />
     <Content Include="forum\view\formvalidator\validator.js" />
     <Content Include="forum\view\forum\main.html" />
@@ -104,12 +109,15 @@
     <Content Include="forum\view\img\logo.png" />
     <Content Include="forum\view\img\logo_test.png" />
     <Content Include="forum\view\img\ttt.html" />
+    <Content Include="forum\view\info.html" />
     <Content Include="forum\view\login.html" />
     <Content Include="forum\view\login_fail.html" />
+    <Content Include="forum\view\membership.html" />
     <Content Include="forum\view\recruitment.html" />
     <Content Include="forum\view\register.html" />
     <Content Include="forum\view\forum\section.html" />
     <Content Include="forum\view\register_fail.html" />
     <Content Include="forum\view\register_succ.html" />
+    <Content Include="forum\view\research.html" />
   </ItemGroup>
 </Project>
