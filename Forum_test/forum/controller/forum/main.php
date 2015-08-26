@@ -62,7 +62,7 @@ class ForumMainController extends Controller
             $data['body'] = $this->load->controller('forum/post');
         
 
-        $this->response->render($this->load->view('forum/main.html', $data));
+        $this->Render('forum/main.html', $data);
 
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="forum\model\forum\thread.php" />
     <Compile Include="index.php" />
     <Compile Include="install.php" />
+    <Compile Include="system\library\emailutil.php" />
     <Compile Include="system\library\partstoob\nav.php" />
     <Compile Include="system\library\session.php" />
     <Compile Include="system\library\strutil.php" />

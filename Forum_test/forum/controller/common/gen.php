@@ -14,6 +14,7 @@ class CommonGenController extends Controller
     {
         $data['footer'] = $this->load->controller('common/footer');
         $data['header'] = $this->load->controller('common/header');
+        //$data['controller'] = $this;
         if(isset($this->request->get['view']))
         {
             $viewname = $this->request->get['view'];

@@ -25,4 +25,16 @@ class Controller
 	public function __set($key, $value) {
 		$this->registry->set($key, $value);
 	}
+    
+    public function Render($path, $data)
+    {
+        $data['controller'] = $this;
+        $page = $this->load->view($path, $data);
+        $this->response->render($page);
+    }
+    public function View($path, $data)
+    {
+        $data['controller'] = $this;
+        return $this->load->view($path, $data);
+    }
 }
