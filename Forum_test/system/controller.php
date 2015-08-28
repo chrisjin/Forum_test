@@ -34,9 +34,10 @@ class Controller
         };
         $data['user'] = $this->user;
         $data['current_url'] = $this->request->full_path();
-        $data['piece'] = function($viewpath, $args = array()) use($data)
+        $data['piece'] = function($viewpath, $args = array())
         {
-            return $this->load->view($viewpath, $data); 
+            $this->InitData($args);
+            return $this->load->view($viewpath, $args); 
         };
     }
     public function Render($path, $data = array())
