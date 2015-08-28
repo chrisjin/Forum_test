@@ -86,6 +86,7 @@ class ForumThreadController extends ForumController
         $data['auth_level'] = $this->user->GetAuthLevel();
         $data['login_link'] = $this->url->link('account/login');
        // $data['register_link'] = 
-        return $this->load->view('forum/thread.html', $data);
+        return $this->View('forum/thread.html', $data);
+        //return $this->load->view('forum/thread.html', $data);
     }
 }

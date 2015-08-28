@@ -25,16 +25,29 @@ class Controller
 	public function __set($key, $value) {
 		$this->registry->set($key, $value);
 	}
-    
-    public function Render($path, $data)
+    public function InitData(&$data)
     {
         $data['controller'] = $this;
+        $data['link'] = function($controllerpath, $args = array())
+        {
+            return $this->url->link($controllerpath, $args);
+        };
+        $data['user'] = $this->user;
+        $data['current_url'] = $this->request->full_path();
+        $data['piece'] = function($viewpath, $args = array()) use($data)
+        {
+            return $this->load->view($viewpath, $data); 
+        };
+    }
+    public function Render($path, $data = array())
+    {
+        $this->InitData($data);
         $page = $this->load->view($path, $data);
         $this->response->render($page);
     }
-    public function View($path, $data)
+    public function View($path, $data = array())
     {
-        $data['controller'] = $this;
+        $this->InitData($data);
         return $this->load->view($path, $data);
     }
 }

@@ -1,4 +1,5 @@
 ﻿<?php echo $pagination_top;?>
+
 <div class="panel panel-default">
     <div class="threadheader">
         <div class="threadtitle">
@@ -40,20 +41,4 @@
 </div>
 <?php echo $pagination_bottom;?>
 
-<?php if($auth_level >= 1) {?>
-
-<div class="threadeditor">
-    <form role="form" action="<?=$post_url ?>" method="post" data-toggle="formvalidator">
-        <div class="form-group foruminputform">
-
-            <input name="title" type="text" data-minlength="6" class="form-control" placeholder="Title?" />
-            <span class="help-block">Minimum of 6 characters</span>
-
-            <textarea class="ckeditor" data-minlength="6" cols="80" id="editor1" name="content" rows="10"></textarea>
-
-            <input type="submit" value="Create" class="btn btn-success" />
-        </div>
-    </form>
-</div>
-
-<?php } ?>
+<?=$piece('forum/bottompiece.html')?>

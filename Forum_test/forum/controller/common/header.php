@@ -36,6 +36,6 @@ class CommonHeaderController extends Controller
             'About Us' => [$this->url->link('common/about'), 'about'],
             'Contact Us' => [$this->url->link('common/contact', ['view' =>'contact.html']), 'contact'],
             ]);
-        return $this->load->view('header.html', $this->data);
+        return $this->View('header.html', $this->data);
     }
 }

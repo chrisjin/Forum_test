@@ -85,6 +85,6 @@ class ForumPostController extends ForumController
         $data['pagination_bottom'] = $pagination;
         
         $data['auth_level'] = $this->user->GetAuthLevel();
-        return $this->load->view('forum/post.html', $data);
+        return $this->View('forum/post.html', $data);
     }
 }
