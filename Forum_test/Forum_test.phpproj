@@ -28,6 +28,7 @@
     <Compile Include="forum\controller\account\login.php" />
     <Compile Include="forum\controller\account\logout.php" />
     <Compile Include="forum\controller\account\register.php" />
+    <Compile Include="forum\controller\account\settings.php" />
     <Compile Include="forum\controller\common\about.php" />
     <Compile Include="forum\controller\common\footer.php" />
     <Compile Include="forum\controller\common\gen.php" />
@@ -101,6 +102,7 @@
     <Content Include="forum\view\event.html" />
     <Content Include="forum\view\footer.html" />
     <Content Include="forum\view\formvalidator\validator.js" />
+    <Content Include="forum\view\forum\bottompiece.html" />
     <Content Include="forum\view\forum\main.html" />
     <Content Include="forum\view\forum\pagination.html" />
     <Content Include="forum\view\forum\post.html" />
@@ -120,5 +122,6 @@
     <Content Include="forum\view\register_fail.html" />
     <Content Include="forum\view\register_succ.html" />
     <Content Include="forum\view\research.html" />
+    <Content Include="forum\view\settings.html" />
   </ItemGroup>
 </Project>

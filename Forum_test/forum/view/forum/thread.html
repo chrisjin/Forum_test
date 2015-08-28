@@ -41,4 +41,20 @@
 </div>
 <?php echo $pagination_bottom;?>
 
-<?=$piece('forum/bottompiece.html')?>
+<?php if($theuser->GetAuthLevel() >= 1) {?>
+<div class="threadeditor">
+    <form role="form" action="<?=$thepath ?>" method="post" data-toggle="formvalidator">
+        <div class="form-group foruminputform">
+
+            <input name="title" type="text" data-minlength="6" class="form-control" placeholder="Title?" />
+            <span class="help-block">Minimum of 6 characters</span>
+
+            <textarea class="ckeditor" data-minlength="6" cols="80" id="editor1" name="content" rows="10"></textarea>
+
+            <input type="submit" value="Create" class="btn btn-success" />
+        </div>
+    </form>
+</div>
+<?php } ?>
+
+<?=$thepiece('forum/bottompiece.html')?>

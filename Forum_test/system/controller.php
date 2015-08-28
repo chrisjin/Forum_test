@@ -27,18 +27,24 @@ class Controller
 	}
     public function InitData(&$data)
     {
-        $data['controller'] = $this;
-        $data['link'] = function($controllerpath, $args = array())
+        $data['thecontroller'] = $this;
+        $data['thelink'] = function($controllerpath, $args = array())
         {
             return $this->url->link($controllerpath, $args);
         };
-        $data['user'] = $this->user;
-        $data['current_url'] = $this->request->full_path();
-        $data['piece'] = function($viewpath, $args = array())
+        $data['theuser'] = $this->user;
+        $data['thepath'] = $this->request->full_path();
+        $data['thepiece'] = function($viewpath, $args = array())
         {
             $this->InitData($args);
             return $this->load->view($viewpath, $args); 
         };
+        $data['thelinkstatic'] = function($path)
+        {
+            return $this->url->link('common/gen', ['view' => $path]) ;
+        };
+        //$data['thefooter'] = $this->load->view(PATH_FOOTER);
+        //$data['theheader'] = $this->load->view(PATH_HEADER);
     }
     public function Render($path, $data = array())
     {

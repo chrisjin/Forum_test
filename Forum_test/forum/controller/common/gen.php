@@ -20,11 +20,11 @@ class CommonGenController extends Controller
             $viewname = $this->request->get['view'];
             if(is_file(DIR_TEMPLATE . $viewname))
             {
-                $this->response->render($this->load->view($viewname, $data));
+                $this->Render($viewname, $data);
                 return;
             }
         }
-        $this->response->render($this->load->view('error.html', $data));    
+        $this->Render('error.html', $data);    
         return;
     }
 }

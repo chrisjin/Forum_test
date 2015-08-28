@@ -30,9 +30,9 @@
 
 <?php echo $pagination_bottom;?>
 
-<?=$piece('forum/bottompiece.html')?>
 
-<!--<?php if($auth_level >= 1) {?>
+
+<?php if($auth_level >= 1) {?>
 <div class="threadeditor">
     <form role="form" action="<?=$post_url ?>" method="post" data-toggle='formvalidator'>
         <div class="foruminputform">
@@ -42,17 +42,7 @@
         </div>
     </form>
 </div>
-<?php } elseif($auth_level == 0 && $user->isLogged()){?>
+<?php } ?>
 
-<div class="user-panel">
-    <a href="<?=$link('account/activate', ['email'=>$user->GetEmail()])?>">ACTIVATE BY EMAIL!</a>
-</div>
-
-<?php } elseif(!$user->isLogged()){?>
-<div class="user-panel">
-    <a href="<?=$link('account/login')?>">LOGIN</a> &emsp;&frasl;&emsp;
-    <a href="<?=$link('account/register')?>">REGISTER</a>
-</div>
-<?php } ?>-->
-
+<?=$thepiece('forum/bottompiece.html')?>
 

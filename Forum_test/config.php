@@ -18,6 +18,8 @@ define('DIR_SYSTEM', './system/');
 define('DIR_IMAGE',  './forum/view/img/');
 define('DIR_STYLE', './forum/view/css/');
 
+define('PATH_FOOTER', 'footer.html');
+define('PATH_HEADER', 'header.html');
 
 define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
