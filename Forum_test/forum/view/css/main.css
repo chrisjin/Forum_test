@@ -69,7 +69,7 @@ li {
 
 }
 .threaditemshadow {
-box-shadow: inset 3px -50px 100px -79px #ABABAB;
+box-shadow: inset 3px -50px 100px -79px #E1E1E1;
 -webkit-box-shadow: inset 3px -50px 100px -79px #ABABAB;
 -moz-box-shadow: inset 3px -50px 100px -79px #ABABAB;
 -o-box-shadow: inset 3px -50px 100px -79px #ABABAB;
@@ -204,10 +204,22 @@ box-shadow: inset 3px -50px 100px -79px #ABABAB;
 
 .subsectiontitle{
     /*//margin-left: 52px;*/
+    /*width: 40%;*/
     display:inline-block;
    vertical-align: top;
 }
-.subsectionlistitem div{
+.subsectiontitle div{
+    display:block;
+    padding: 5px 0px;
+}
+.subsectioninfo{
+    float:right;
+}
+.subsectioninfo div{
+    display:block;
+    padding: 5px 0px;
+}
+.subsectionlistitem>div{
 
     
     display:inline-block;

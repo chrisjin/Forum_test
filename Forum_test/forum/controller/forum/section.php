@@ -41,8 +41,14 @@ class ForumSectionController extends Controller
             {
                 $subid = $subsection['subsection_id'];
                 $parentid = $subsection['section_id'];
+                
                 $subsection['url'] = 
                     StrUtil::form_link('forum/main',['path'=>"$parentid/$subid"]);
+            
+                $postnum = $this->forum_section_model->GetNumPostBySubsectionID($subid);
+                $threadnum = $this->forum_section_model->GetNumThreadBySubsectionID($subid);
+                $subsection['postcount'] = $postnum;
+                $subsection['threadcount'] = $threadnum;
             }
         }
         

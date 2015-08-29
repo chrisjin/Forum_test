@@ -10,6 +10,17 @@
  */
 class ForumSectionModel extends Model
 {
+    public function GetNumPostBySubsectionID($id)
+    {
+        $queryresults = $this->db->query("SELECT count(*) FROM post, thread WHERE post.thread_id = thread.thread_id AND thread.subsection_id = $id");
+        return $queryresults->row['count(*)'];
+    
+    }
+    public function GetNumThreadBySubsectionID($id)
+    {
+        $queryresults =$this->db->query("SELECT count(*) FROM thread WHERE subsection_id = $id");
+        return $queryresults->row['count(*)'];
+    }
     public function GetAllSections()
     {
         $section = $this->db->query('SELECT * FROM section');

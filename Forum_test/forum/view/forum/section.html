@@ -17,10 +17,20 @@
                             <img src="./forum/view/img/forum_sect.png" align="top">
                         </div>
                         <div class="subsectiontitle">
-                            <a href="<?=$subsection['url']?>"> <?=$subsection['name']?></a>
-                            
+                            <div>
+                                <a href="<?=$subsection['url']?>"> <?=$subsection['name']?></a>
+                            </div>
+                            <div>
+                                <?=$subsection['description']?>
+                            </div>
                         </div>
-                    
+                        <div class="subsectioninfo">
+                            <div>
+                                Posts : <?= $subsection['postcount']?> &emsp;&frasl;&emsp;
+                                Threads : <?= $subsection['threadcount']?>
+                            </div>
+
+                        </div>
                     </li>
 
                     <?php }?>
