@@ -13,25 +13,25 @@
         <?php foreach($threads as $thread) { ?>
         <li class="threadlistitem threaditemshadow">
 
-            <div class="threadtitle  attachments threaditemshadow">
+            <div class="threadtitle  attachments">
                 <div>
                     <b>
                         <a href="<?=$thread['url']?>"><?=$thread['title']?></a>
                     </b>
                 </div>
-                <div style="display:block">
+                <div class="smallfont">
                     Started By <?=$thread['username']?>
                 </div>
             </div>
 
-            <div class="threadinfo  attachments threaditemshadow">
-                <div>Last Reply: <?=$thread['lastreply']?></div>
-                <div>Replies: <?=$thread['postcount'] - 1?></div>
+            <div class="threadinfo  attachments">
+                <div class="smallfont">Last Reply: <?=$thread['lastreply']?></div>
+                <div class="smallfont">Replies: <?=$thread['postcount'] - 1?></div>
 
 
             </div>
             <?php if($auth_level == 1) {?>
-            <div class="threadright attachments threaditemshadow">
+            <div class="threadright attachments">
                 <div>
                     <a href="<?=$thread['delete_url']?>">
                         Delete
@@ -40,9 +40,9 @@
                 <div>&nbsp</div>
             </div>
             <?php } else { ?>
-            <div class="threadright attachments threaditemshadow">
-                <div>&nbsp</div>
-                <div>&nbsp</div>
+            <div class="threadright attachments">
+                <!--<div>&nbsp</div>
+                <div>&nbsp</div>-->
             </div>
             <?php }?>
         </li>

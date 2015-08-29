@@ -20,7 +20,7 @@ class ForumPostController extends ForumController
     {
         
     }
-    private $pagesize = 4;
+    private $pagesize = 5;
     
     public function index()
     {
