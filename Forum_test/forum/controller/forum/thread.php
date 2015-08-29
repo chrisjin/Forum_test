@@ -55,13 +55,17 @@ class ForumThreadController extends ForumController
             $thid = $thread['thread_id'];
             $url = StrUtil::form_link('forum/main',
                 ['path'=>"$this->forum_path/$thid"]);
+            
             $title = $thread['title'];
             
             $threadinfo = $thread;
             $threadinfo['url'] = $url;
+            
             $user_info = $this->account_user_model->GetUserByID($thread['user_id'])->rows;
-
             $threadinfo['username'] = $user_info[0]['username'];
+            
+            $numofpost = $this->forum_thread_model->GetNumPostByThreadID($thid);
+            $threadinfo['postcount'] = $numofpost;
             
             $threadinfo['delete_url'] = StrUtil::form_link('forum/delete',
                         ['threadid'=>"$thid",

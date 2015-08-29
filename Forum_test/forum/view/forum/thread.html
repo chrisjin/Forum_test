@@ -2,31 +2,45 @@
 
 <div class="panel panel-default">
     <div class="threadheader">
-        <div class="threadtitle">
+        <div class="threadtitle  attachments">
             Title
         </div>
-        <div class="threadinfo">
+        <div class="attachments">
             Info
         </div>
     </div>
     <ul class="threadlist">
         <?php foreach($threads as $thread) { ?>
-        <li class="threadlistitem attachments">
+        <li class="threadlistitem threaditemshadow">
 
-            <div class="threadtitle">
-                <a href="<?=$thread['url']?>"><?=$thread['title']?></a>
+            <div class="threadtitle  attachments threaditemshadow">
+                <div>
+                    <b>
+                        <a href="<?=$thread['url']?>"><?=$thread['title']?></a>
+                    </b>
+                </div>
+                <div style="display:block">
+                    Started By <?=$thread['username']?>
+                </div>
             </div>
-            <ul class="threadinfo">
-                <li>Last Reply: <?=$thread['lastreply']?></li>
-                <li>Started By <?=$thread['username']?></li>
-            </ul>
+
+            <div class="threadinfo  attachments threaditemshadow">
+                <div>Last Reply: <?=$thread['lastreply']?></div>
+                <div>Replies: <?=$thread['postcount'] - 1?></div>
+
+
+            </div>
             <?php if($auth_level == 1) {?>
-            <div class="threadright">
+            <div class="threadright threaditemshadow">
                 <a href="<?=$thread['delete_url']?>">
                     Delete
                 </a>
             </div>
-            <?php } ?>
+            <?php } else { ?>
+            <div class="threadright threaditemshadow">
+
+            </div>
+            <?php }?>
         </li>
         <?php } ?>
         <?php if(count($threads) == 0) {?>

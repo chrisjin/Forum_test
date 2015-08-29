@@ -31,19 +31,30 @@
     min-width: 350px;
     display:inline-block;
     float: left;
+   
 }
 .threadinfo{
     display:inline-block;
+    background: #f2f6f8;
+    width: 38%;
 }
+.threadextrainfo{
+    display:inline-block;
+    background: #f2f6f8;
+}
+
 .threadright{
     display:inline-block;
     float: right;
+    width: 12%;
 }
 li {
   list-style: none;
 }
 .threadlistitem {
-    display: block;
+  border: 1px solid #c4c4c4;
+  border-top: 1px solid rgb(255,255,255);
+  display: block;
   padding: 0;
   width: 100%;
   display: block;
@@ -51,9 +62,23 @@ li {
   color: #3e3e3e;
   float: left;
   position: relative;
-  -moz-box-shadow: -2px 2px 2px #c8c8c8;
+  /*-moz-box-shadow: -2px 2px 2px #c8c8c8;
   -webkit-box-shadow: -2px 2px 2px #c8c8c8;
-  box-shadow: -2px 2px 2px #c8c8c8;
+  box-shadow: -2px 2px 2px #c8c8c8;*/
+
+}
+.threaditemshadow {
+box-shadow: inset 3px -50px 100px -79px #ABABAB;
+-webkit-box-shadow: inset 3px -50px 100px -79px #ABABAB;
+-moz-box-shadow: inset 3px -50px 100px -79px #ABABAB;
+-o-box-shadow: inset 3px -50px 100px -79px #ABABAB;
+}
+
+.threadlistitem .threadinfo div{
+    padding: 5px 0px;
+}
+.threadlistitem .threadtitle  div{
+    padding: 5px 0px;
 }
 
 .threadlist {
@@ -72,19 +97,16 @@ li {
     clear: both;
 }
 
-.attachments, .threadheader{
+.attachments{
   padding-right: 10px;
   padding-left: 10px;
     padding-top: 5px;
   padding-bottom: 5px;
 }
 .attachments {
-    border: 1px solid #cecece;
-    /*-moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;*/
+
     font-size: 14px;
-    color: #337ab7;
+    color: #1D1B28;
 }
 
 .threadheader {
@@ -94,8 +116,11 @@ li {
     background-image: linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
     background-repeat: repeat-x;
+    border: 1px solid #e8e8e8;
 }
-
+.threadheader div{
+    display:inline-block;
+}
 .postuserinfo {
     margin-left:50px;
 }
