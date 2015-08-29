@@ -10,14 +10,17 @@
         <div id="collapse1" class="collapse in">
             <div>
                 <ul>
-
                     <?php foreach($subsections[$section['section_id']] as $subsection) {?>
 
                     <li class="subsectionlistitem">
+                        <div>
+                            <img src="./forum/view/img/forum_sect.png" align="top">
+                        </div>
                         <div class="subsectiontitle">
                             <a href="<?=$subsection['url']?>"> <?=$subsection['name']?></a>
-                            <br>
+                            
                         </div>
+                    
                     </li>
 
                     <?php }?>

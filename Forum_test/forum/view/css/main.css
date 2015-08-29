@@ -35,8 +35,8 @@
 }
 .threadinfo{
     display:inline-block;
-    background: #f2f6f8;
-    width: 38%;
+    float: left;
+    width: 26%;
 }
 .threadextrainfo{
     display:inline-block;
@@ -45,8 +45,9 @@
 
 .threadright{
     display:inline-block;
-    float: right;
+    float: left;
     width: 12%;
+    height: 100%;
 }
 li {
   list-style: none;
@@ -79,6 +80,11 @@ box-shadow: inset 3px -50px 100px -79px #ABABAB;
 }
 .threadlistitem .threadtitle  div{
     padding: 5px 0px;
+}
+.threadlistitem .threadright  div{
+    padding: 5px 0px;
+    display: block;
+    height:100%;
 }
 
 .threadlist {
@@ -198,9 +204,14 @@ box-shadow: inset 3px -50px 100px -79px #ABABAB;
 
 .subsectiontitle{
     /*//margin-left: 52px;*/
-    width: 62%;
+    display:inline-block;
+   vertical-align: top;
 }
+.subsectionlistitem div{
 
+    
+    display:inline-block;
+}
 .forumbreadcrumb {
     padding: 8px 15px;
     margin-bottom: 20px;

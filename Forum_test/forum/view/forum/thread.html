@@ -31,14 +31,18 @@
 
             </div>
             <?php if($auth_level == 1) {?>
-            <div class="threadright threaditemshadow">
-                <a href="<?=$thread['delete_url']?>">
-                    Delete
-                </a>
+            <div class="threadright attachments threaditemshadow">
+                <div>
+                    <a href="<?=$thread['delete_url']?>">
+                        Delete
+                    </a>
+                </div>
+                <div>&nbsp</div>
             </div>
             <?php } else { ?>
-            <div class="threadright threaditemshadow">
-
+            <div class="threadright attachments threaditemshadow">
+                <div>&nbsp</div>
+                <div>&nbsp</div>
             </div>
             <?php }?>
         </li>
