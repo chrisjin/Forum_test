@@ -145,6 +145,55 @@ box-shadow: inset 3px -50px 100px -79px #E1E1E1;
     margin: 5px;
     
 }
+.postcontent{
+
+}
+.postcontent table{
+  display: table;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-color: #1D1B28;
+}
+    .postcontent table > tbody > tr:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .postcontent table > thead > tr > th {
+        vertical-align: bottom;
+        border-bottom: 3px solid #ddd;
+        border-top: 3px solid #ddd;
+    }
+    .postcontent table ,
+    .postcontent table > tbody > tr > th,
+    .postcontent table > tfoot > tr > th,
+    .postcontent table > tbody > tr > td,
+    .postcontent table > tfoot > tr > td {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+    .postcontent table hr{
+          margin-top: 5px;
+          margin-bottom: 5px;
+          border: 0;
+          border-top: 1px solid #ddd;
+    }
+    .postcontent table > thead > tr > th,
+    .postcontent table > thead > tr > td,
+    .postcontent table > tbody > tr > th,
+    .postcontent table > tfoot > tr > th,
+    .postcontent table > tbody > tr > td,
+    .postcontent table > tfoot > tr > td {
+        padding: 8px;
+        line-height: 1.42857143;
+        vertical-align: top;
+
+    }
+
+    .postcontent li {
+        list-style-type: disc;
+        margin-left: 50px;
+    }
+
 
 .avatar {
     display: inline-block;
