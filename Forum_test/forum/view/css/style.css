@@ -164,3 +164,67 @@ p{font-size:1em;line-height: 1.7em; margin-bottom: 1.7em;}
 .row{
     margin-bottom: 2em;
 }
+
+
+.container-chapter-style{
+	text-align: center;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-size: 32px;
+	
+}
+
+.grid-chapter-style {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 1.6666%;
+    width: 30%;
+	height:400px;
+	text-align: left;
+    cursor: pointer;
+	/*display:inline-block;*/
+}
+.grid-chapter-style img{
+			max-width: 100%;
+			max-height: 100%;
+			width: 342px;
+			height: 342px;
+			padding-top:15px;
+			padding-bottom:15px;
+		}
+
+.grid-chapter-style a{
+	font-size:24px;
+	
+}
+
+.bg-img{
+	background-image:url(../img/portfolio/);
+	background-size:cover;
+	background-position:center;
+	
+}
+
+.logo-su-chapter{
+	
+}
+
+.logo-su-chapter img{
+	margin-left: auto;
+    margin-right: auto;
+	
+	width:400px;
+	height:400px;
+	padding:50px;
+	
+}
+.logo_home_page{
+	display:block;
+	margin-left: auto;
+    margin-right: auto;
+	width:480px;
+	height:122px;
+	
+}
+
